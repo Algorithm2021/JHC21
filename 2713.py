@@ -4,7 +4,7 @@ for a in range(n):
 	h, w = int(line.split()[0]), int(line.split()[1]) 
 	words, code = [], ''
 
-	for word in line[2 + (w//10 + 1) +(h//10 + 1):]:
+	for word in line[2 + (2 if w//10 > 0 else 1) +(2 if h//10 > 0 else 1):]:
 		if (word == ' '): words+=[0]
 		else: words += [ord(word)-64]
 	print(words)
