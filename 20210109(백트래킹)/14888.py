@@ -8,11 +8,12 @@ OP = list(map(int, sys.stdin.readline().split()))
 def calc(arr, oper):
 	res = arr[0]
 
-	for a, o in zip(arr[1:], oper):
-		if o == 0: res += a
-		elif o == 1: res -= a
-		elif o == 2: res *= a
-		else: res = int(res/a)
+	for i in range(len(oper)):
+		if oper[i] == 0: res += arr[i+1]
+		elif oper[i] == 1: res -= arr[i+1]
+		elif oper[i] == 2: res *= arr[i+1]
+		else: res = int(res/arr[i+1])
+		
 	return res
 
 op = [] 
